@@ -1,5 +1,8 @@
 import React from 'react';
 
+//TODO: Change the buttons to PropRule Component and pass the rule name as a prop
+//TODO: Will receive an onClickHandler method from Questions, pass it to PropRule
+
 const options = () => {
     return(
         <div>
