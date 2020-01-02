@@ -11,6 +11,11 @@ import Line from '../Line/Line.js';
 //else, for now, console.log("wrong choice")
 
 class Question extends Component {
+
+    ruleSelectionHandler = () => {
+        console.log("rule selection handler executed");
+    }
+
     render(){
         console.log(this.props.text);
         console.log(this.props.nextSteps);
@@ -22,7 +27,7 @@ class Question extends Component {
                 <Line />
                 <Line />
                 <Line />
-                <Options />
+                <Options choiceSelection = {this.ruleSelectionHandler}/>
                 <div> Start Over Icon </div>
                 <div> Next Step </div>
                 <div> Possible Soultions </div>
