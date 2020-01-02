@@ -7,17 +7,20 @@ const q1a = {
 };
 
 module.exports.questions = [
-    {
+    {   
+        id: "quest-1",
         line: "question1",
         rulesToGetHere: null,
         nextPossibleSteps: q1a
     },
     {
+        id: "quest-2",
         line: "question2",
         rulesToGetHere: null,
         nextPossibleSteps: "no steps"  
     },
     {
+        id: "quest-3",
         line: "question3",
         rulesToGetHere: null,
         nextPossibleSteps: "no steps"
