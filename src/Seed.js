@@ -1,3 +1,32 @@
+// import React from 'react';
+
+// const seed = () => {
+//    const questions = [
+//     {
+//         line: "question1",
+//         rulesToGetHere: null,
+//         nextPOssibleSteps: "no steps"
+//     },
+//     {
+//         line: "question2",
+//         rulesToGetHere: null,
+//         nextPOssibleSteps: "no steps"  
+//     },
+//     {
+//         line: "question3",
+//         rulesToGetHere: null,
+//         nextPOssibleSteps: "no steps"
+//     }
+//    ]
+
+//    return questions;
+// }
+
+// export default seed;
+
+//TODO: Populate this file with data
+
+
 // const Questions = list of steps
 
 

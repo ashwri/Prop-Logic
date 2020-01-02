@@ -11,9 +11,11 @@ import Line from '../Line/Line.js';
 // if the correct button was clicked, make the next line visible
 //else, for now, console.log("wrong choice")
 
-const question = () => {
+const question = (props) => {
+    console.log(props.text);
     return (
         <div>
+            
             <Line/>
             <Line/>
             <Line/>
