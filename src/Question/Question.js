@@ -1,8 +1,7 @@
-import React from 'react';
+import React, {Component} from 'react';
 import Options from '../Options/Options.js';
 import Line from '../Line/Line.js';
 
-//TODO: Change to stateful component
 //TODO: Will recieve question data, save it in a structure.
 //TODO: Add style or js to make lines initially invisible. 
 //We can pass a bool to line which will handle that
@@ -11,23 +10,28 @@ import Line from '../Line/Line.js';
 // if the correct button was clicked, make the next line visible
 //else, for now, console.log("wrong choice")
 
-const question = (props) => {
-    console.log(props.text);
-    console.log(props.nextSteps);
-    return (
-        <div>
+class Question extends Component {
+    render(){
+        console.log(this.props.text);
+        console.log(this.props.nextSteps);
 
-            <Line />
-            <Line />
-            <Line />
-            <Line />
-            <Options />
-            <div> Start Over Icon </div>
-            <div> Next Step </div>
-            <div> Possible Soultions </div>
-        </div>
-    )
+        return (
+            <div>
+    
+                <Line />
+                <Line />
+                <Line />
+                <Line />
+                <Options />
+                <div> Start Over Icon </div>
+                <div> Next Step </div>
+                <div> Possible Soultions </div>
+            </div>
+        )
+    }
+    
+   
 }
 
-export default question;
+export default Question;
 
