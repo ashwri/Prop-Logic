@@ -13,14 +13,15 @@ import Line from '../Line/Line.js';
 
 const question = (props) => {
     console.log(props.text);
+    console.log(props.nextSteps);
     return (
         <div>
-            
-            <Line/>
-            <Line/>
-            <Line/>
-            <Line/>
-            <Options/>
+
+            <Line />
+            <Line />
+            <Line />
+            <Line />
+            <Options />
             <div> Start Over Icon </div>
             <div> Next Step </div>
             <div> Possible Soultions </div>
