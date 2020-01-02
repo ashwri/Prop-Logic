@@ -1,8 +1,16 @@
+//TODO Phase 2: figure out a key for this data
+
+const q1a = {
+    line: "question1 step 1",
+    rulesToGetThere: [1,2,5],
+    nextPossibleSteps: "none"
+};
+
 module.exports.questions = [
     {
         line: "question1",
         rulesToGetHere: null,
-        nextPossibleSteps: "no steps"
+        nextPossibleSteps: q1a
     },
     {
         line: "question2",
@@ -15,7 +23,6 @@ module.exports.questions = [
         nextPossibleSteps: "no steps"
     }
    ];
-
 
 
 // const Questions = list of steps
