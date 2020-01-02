@@ -12,18 +12,21 @@ import Line from '../Line/Line.js';
 
 class Question extends Component {
 
-    ruleSelectionHandler = () => {
+
+
+    ruleSelectionHandler = (id, event) => {
         console.log("rule selection handler executed");
+        console.log("This is the id" + id);
     }
 
     render(){
         console.log(this.props.text);
         console.log(this.props.nextSteps);
-
+//
         return (
             <div>
     
-                <Line />
+                <Line text={this.props.text}/>
                 <Line />
                 <Line />
                 <Line />
