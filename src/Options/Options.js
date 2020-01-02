@@ -1,4 +1,5 @@
 import React from 'react';
+import PropRule from '../PropRule/PropRule'
 
 //TODO: Change the buttons to PropRule Component and pass the rule name as a prop
 //TODO: Will receive an onClickHandler method from Questions, pass it to PropRule
@@ -6,19 +7,20 @@ import React from 'react';
 const options = () => {
     return(
         <div>
-            <button> Identity </button>
-            <button> Universal Bound </button>
-            <button> Idempotent </button>
-            <button> Commutative </button>
-            <button> Associative </button>
-            <button> Absorption </button>
-            <button> Distributive </button>
-            <button> Negation </button>
-            <button> XOR </button>
-            <button> Conditional </button>
-            <button> Contrapositive </button>
-            <button> Double Negation </button>
-
+            <PropRule rule = "Identity"/>
+            <PropRule rule = "Universal Bound"/>
+            <PropRule rule = "Idempotent"/>
+            <PropRule rule = "Commutative"/>
+            <PropRule rule = "Associative"/>
+            <PropRule rule = "Commutative"/>
+            <PropRule rule = "Associative"/>
+            <PropRule rule = "Absorption"/>
+            <PropRule rule = "Distributive"/>
+            <PropRule rule = "Negation"/>
+            <PropRule rule = "XOR"/>
+            <PropRule rule = "Conditional"/>
+            <PropRule rule = "Contrapositive"/>
+            <PropRule rule = "Double Negation"/>
         </div>
     )
 }
