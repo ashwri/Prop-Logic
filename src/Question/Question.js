@@ -35,10 +35,10 @@ class Question extends Component {
     }
 
     createLine = (lineText) => {
-        return <Line text={lineText} />
+        return <Line text={lineText} key={this.props.id + lineText} />
     }
 
-    //TODO Phase 2: Add keys to the createLine : needed for the map function
+
     createLines = (lines) => {
         return lines.map(this.createLine);
     }

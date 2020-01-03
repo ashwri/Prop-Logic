@@ -15,6 +15,7 @@ class App extends Component {
         text={question.line}
         nextSteps={question.nextPossibleSteps}
         key={question.id}
+        id={question.id}
       />
     ));
     return (
