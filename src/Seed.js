@@ -3,28 +3,28 @@ const q1d = {
     id: "quest-1d",
     line: "question1 step 3",
     rulesToGetThere: ["id", "neg", "dneg"],
-    nextPossibleSteps: "none"
+    nextPossibleSteps: null
 };
 
 const q1c = {
     id: "quest-1c",
-    line: "question1 step 1b",
+    line: "question1 step 2",
     rulesToGetThere: ["dneg"],
-    nextPossibleSteps: q1d
+    nextPossibleSteps: [q1d]
 };
 
 const q1a = {
     id: "quest-1a",
     line: "question1 step 1a",
     rulesToGetThere: ["id"],
-    nextPossibleSteps: q1c
+    nextPossibleSteps: [q1c]
 };
 
 const q1b = {
     id: "quest-1b",
     line: "question1 step 1b",
     rulesToGetThere: ["neg"],
-    nextPossibleSteps: q1c
+    nextPossibleSteps: [q1c]
 };
 
 
