@@ -3,6 +3,8 @@ import Options from '../Options/Options.js';
 import Line from '../Line/Line.js';
 
 //TODO Phase 3: use a stack data structure so that you can go back oto last step
+//TODO Phase X: figure out how to fix the code giving a warning...
+//TODO Phase X: Figure out a better way to implement that chunk of code.
 
 class Question extends Component {
 
@@ -17,13 +19,17 @@ class Question extends Component {
         if (this.state.nextSteps === null) {
             return;
         }
+
         for (var i = 0; i < this.state.nextSteps.length; i++) {
             if (this.state.nextSteps[i].rulesToGetThere.includes(id)) {
                 found = true;
                 this.lines = [...this.lines, this.state.nextSteps[i].line];
-                this.setState({
-                    nextSteps: this.state.nextSteps[i].nextPossibleSteps,
-                    text: this.state.nextSteps[i].line
+                this.setState((prevState, props) => {
+                    return {
+                        nextSteps: prevState.nextSteps[i].nextPossibleSteps,
+                        text: prevState.nextSteps[i].line
+                    };
+
                 });
                 break;
             }
