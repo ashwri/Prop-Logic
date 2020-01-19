@@ -13,6 +13,22 @@ class Question extends Component {
         text: this.props.text
     }
 
+    lines = [this.props.text];
+
+    updateLines = (i) => {
+        this.lines = [...this.lines, this.state.nextSteps[i].line];
+    }
+
+    updateState = (i) => {
+        this.setState((prevState, props) => {
+            return {
+                nextSteps: prevState.nextSteps[i].nextPossibleSteps,
+                text: prevState.nextSteps[i].line
+            };
+
+        });
+    }
+
     ruleSelectionHandler = (id, event) => {
         let found = false;
 
@@ -20,17 +36,11 @@ class Question extends Component {
             return;
         }
 
-        for (var i = 0; i < this.state.nextSteps.length; i++) {
+        for (let i = 0; i < this.state.nextSteps.length; i++) {
             if (this.state.nextSteps[i].rulesToGetThere.includes(id)) {
                 found = true;
-                this.lines = [...this.lines, this.state.nextSteps[i].line];
-                this.setState((prevState, props) => {
-                    return {
-                        nextSteps: prevState.nextSteps[i].nextPossibleSteps,
-                        text: prevState.nextSteps[i].line
-                    };
-
-                });
+                this.updateLines(i);
+                this.updateState(i);
                 break;
             }
         }
@@ -39,6 +49,7 @@ class Question extends Component {
             console.log("Uh-oh! Wrong choice");
         }
     }
+
 
     createLine = (lineText) => {
         return <Line text={lineText} key={this.props.id + lineText} />
@@ -49,15 +60,18 @@ class Question extends Component {
         return lines.map(this.createLine);
     }
 
-    lines = [this.props.text];
+
     render() {
         return (
             <div>
-                {this.createLines(this.lines)}
+                <div>
+                    {this.createLines(this.lines)}
+                    <div> Start Over Icon </div>
+                    <div> Next Step </div>
+                    <div> Possible Soultions </div>
+                </div>
                 <Options choiceSelection={this.ruleSelectionHandler} />
-                <div> Start Over Icon </div>
-                <div> Next Step </div>
-                <div> Possible Soultions </div>
+
             </div>
         )
     }
