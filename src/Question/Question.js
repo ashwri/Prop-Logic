@@ -29,22 +29,24 @@ class Question extends Component {
         });
     }
 
+    nextStepCheck = (id) => {
+        for (let i = 0; i < this.state.nextSteps.length; i++) {
+            if (this.state.nextSteps[i].rulesToGetThere.includes(id)) {
+                this.updateLines(i);
+                this.updateState(i);
+                return true;
+            }
+        }
+        return false;
+
+    }
+
     ruleSelectionHandler = (id, event) => {
         let found = false;
-
         if (this.state.nextSteps === null) {
             return;
         }
-
-        for (let i = 0; i < this.state.nextSteps.length; i++) {
-            if (this.state.nextSteps[i].rulesToGetThere.includes(id)) {
-                found = true;
-                this.updateLines(i);
-                this.updateState(i);
-                break;
-            }
-        }
-
+        found = this.nextStepCheck(id);
         if (!found) {
             console.log("Uh-oh! Wrong choice");
         }
