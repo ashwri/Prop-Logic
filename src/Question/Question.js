@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Options from '../Options/Options.js';
 import Line from '../Line/Line.js';
+import '../Question/Question.css';
 
 //TODO Phase 3: use a stack data structure so that you can go back oto last step
 //TODO Phase X: figure out how to fix the code giving a warning...
@@ -66,15 +67,20 @@ class Question extends Component {
     render() {
         return (
             <div>
-                <div>
-                    {this.createLines(this.lines)}
-                    <div> Start Over Icon </div>
-                    <div> Next Step </div>
-                    <div> Possible Soultions </div>
+                <div className="grid-container">
+                    <div>
+                        {this.createLines(this.lines)}
+                    </div>
+                    <Options choiceSelection={this.ruleSelectionHandler} />
                 </div>
-                <Options choiceSelection={this.ruleSelectionHandler} />
+                <div>
+                    <button> Start Over Icon </button>
+                    <button> Next Step </button>
+                    <button> Possible Soultions </button>
+                </div>
 
             </div>
+
         )
     }
 

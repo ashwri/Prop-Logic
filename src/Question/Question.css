@@ -1,0 +1,14 @@
+.grid-container{
+    display:grid;
+    grid-template-columns: 2fr 1fr;
+    margin: 1em;
+}
+
+.grid-container>div:nth-child(1){
+    background-color: azure;
+    width: auto;
+}
+.grid-container>div:nth-child(2){
+    background-color: lightgrey;
+    width: auto;
+}

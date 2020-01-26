@@ -1,11 +1,12 @@
 import React from 'react';
 import PropRule from '../PropRule/PropRule'
+import './Options.css'
 
 //TODO: Will receive an onClickHandler method from Questions, pass it to PropRule
 
 const options = (props) => {
     return (
-        <div>
+        <div className="options">
             <PropRule
                 rule="Identity"
                 ruleSelection={props.choiceSelection}
