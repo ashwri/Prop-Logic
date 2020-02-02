@@ -8,12 +8,7 @@ import '../Question/Question.css';
 //TODO Phase X: Figure out a better way to implement that chunk of code.
 
 class Question extends Component {
-    //stack here..
-    //add the state to the stack
-    //add the state of createLine to the stack.. maybe I will have to create different variables to hold this value?
-    //{nextSteps, text, lineText} //probably don't need the text since that will probably be in the lineText
     stateStack = [];
-
 
     state = {
         nextSteps: this.props.nextSteps,
@@ -127,7 +122,15 @@ class Question extends Component {
     }
 
     startOverHandler = (event) => {
-        //set the items to the bottom of the stack;
+        let info = this.stateStack[0];
+        this.stateStack.lenght = 0; // move this into it's own function
+        // console.log(info);
+        let newState = {
+            nextSteps: info.currState.nextSteps,
+            text: info.currState.text
+        }
+        this.setPrevState(newState);
+        this.lines = info.text;
     }
 
     createLine = (lineText) => {
@@ -142,8 +145,6 @@ class Question extends Component {
 
     render() {
         this.stackPush();
-        console.log("The stack: ", this.stateStack);
-        console.log("The current state: ", this.state);
         return (
             <div>
                 <div className="grid-container">
@@ -153,7 +154,7 @@ class Question extends Component {
                     <Options choiceSelection={this.ruleSelectionHandler} />
                 </div>
                 <div>
-                    <button> Start Over Icon </button>
+                    <button onClick={this.startOverHandler}> Start Over Icon </button>
                     <button> Next Step </button>
                     <button onClick={this.backButtonHandler}> Last Step </button>
                     <button> Possible Soultions </button>
